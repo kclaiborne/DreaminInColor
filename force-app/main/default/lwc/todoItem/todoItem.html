@@ -1,0 +1,118 @@
+<template>
+  <div class="task-card">
+    <!-- Edit Mode -->
+    <template lwc:if={isEditMode}>
+      <lightning-card hide-header="true">
+        <div class="task-card-title-container slds-grid">
+          <h3 slot="title" class="task-card-title">
+            <lightning-icon
+              lwc:if={isOpen}
+              icon-name="action:new_event"
+              size="small"
+            ></lightning-icon>
+            <lightning-icon
+              lwc:else
+              icon-name="action:update_status"
+              size="small"
+            ></lightning-icon>
+          </h3>
+          <div class="input-container">
+            <input
+              type="text"
+              placeholder={name}
+              class="slds-input"
+              value={newTask}
+              onblur={handleOnBlur}
+              onchange={handleInputChange}
+              onclick={handleEditTaskButtonClick}
+              maxlength="100"
+            />
+            <div>
+              <lightning-layout>
+                <lightning-layout-item>
+                  <lightning-button-icon
+                    variant="bare"
+                    icon-name="utility:check"
+                    disabled={isEditTaskButtonDisabled}
+                    class="edit-action-icon"
+                    onclick={handleEditTask}
+                  >
+                  </lightning-button-icon>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                  <lightning-button-icon
+                    variant="bare"
+                    icon-name="utility:close"
+                    class="edit-action-icon"
+                    onclick={handleCancelEditTask}
+                  >
+                  </lightning-button-icon>
+                </lightning-layout-item>
+              </lightning-layout>
+            </div>
+            <div class="slds-border_bottom"></div>
+          </div>
+        </div>
+      </lightning-card>
+    </template>
+
+    <!-- View Mode -->
+    <template lwc:else>
+      <!-- Non-Completed Tasks -->
+      <lightning-card lwc:if={isOpen} title={name} icon-name="action:new_event">
+        <div slot="actions">
+          <lightning-layout>
+            <lightning-layout-item padding="around-small">
+              <lightning-icon
+                icon-name="utility:success"
+                alternative-text="mark complete"
+                title="markComplete"
+                size="x-small"
+                class="action-icon"
+                onclick={handleAction}
+              ></lightning-icon>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+              <lightning-icon
+                icon-name="utility:edit"
+                alternative-text="edit"
+                title="edit"
+                size="x-small"
+                class="action-icon"
+                onclick={handleAction}
+              ></lightning-icon>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+              <lightning-icon
+                icon-name="utility:delete"
+                alternative-text="delete"
+                title="delete"
+                size="x-small"
+                class="action-icon"
+                onclick={handleAction}
+              ></lightning-icon>
+            </lightning-layout-item>
+          </lightning-layout>
+        </div>
+      </lightning-card>
+
+      <!-- Completed Tasks -->
+      <lightning-card lwc:else title={name} icon-name="action:update_status">
+        <div slot="actions">
+          <lightning-layout>
+            <lightning-layout-item padding="around-small">
+              <lightning-icon
+                icon-name="utility:delete"
+                alternative-text="delete"
+                title="delete"
+                size="x-small"
+                class="action-icon"
+                onclick={handleAction}
+              ></lightning-icon>
+            </lightning-layout-item>
+          </lightning-layout>
+        </div>
+      </lightning-card>
+    </template>
+  </div>
+</template>

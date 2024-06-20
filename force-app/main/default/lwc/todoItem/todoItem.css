@@ -1,0 +1,68 @@
+.task-card {
+  border-radius: 3px;
+  border-bottom: 1px solid #c4c4c4;
+  border-left: 3px solid red;
+  border-right: 1px solid #c4c4c4;
+  border-top: 1px solid #c4c4c4;
+}
+
+.task-card-title-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  padding-left: 1rem;
+}
+
+.task-card-title {
+  margin-right: 0.75rem;
+}
+
+.input-container {
+  align-items: center;
+  border-bottom: 1px solid #c4c4c4;
+  display: flex;
+  flex-direction: row;
+}
+
+.input {
+  background: transparent;
+  border: 0;
+  border-color: transparent;
+  border-style: hidden;
+  box-shadow: 0 0 transparent;
+  cursor: default;
+  min-height: 15px;
+}
+
+.slds-input {
+  background: transparent;
+  border: 0;
+  border-color: transparent;
+  border-style: hidden;
+  box-shadow: 0 0 transparent;
+  cursor: default;
+  height: 10px;
+  left: -12px;
+  position: relative;
+  top: 0;
+}
+
+::placeholder {
+  color: #c4c4c4;
+}
+
+.action-icon,
+.edit-action-icon {
+  cursor: pointer;
+}
+
+.action-icon:hover,
+.action-icon:active {
+  --slds-c-icon-color-foreground: #0176d3;
+  --slds-c-icon-color-foreground-default: #0176d3;
+}
+
+.edit-action-icon {
+  padding-right: 5px;
+}
