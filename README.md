@@ -15,6 +15,9 @@ Join Kendra Claiborne in a presentation designed for Salesforce Developers who w
 [Lightning Web Component Performance Best Practices](https://developer.salesforce.com/blogs/2020/06/lightning-web-components-performance-best-practices)
 
 # To Do App Demo Pre-Requisites: Setup Salesforce Org and VSCode
+
+![To Do App Preview](https://github.com/kclaiborne/DreaminInColor/assets/21960392/1e0896cf-cc68-4b0a-94be-4e85463c2f49)
+
 ## Setup Salesforce Org
 [Sign up for a free Salesforce Developer Edition Org](https://developer.salesforce.com/signup)
 
